@@ -10,9 +10,9 @@ test-paths:
   - tests
 macro-paths:
   - macros
-modules-path: "../dbt_modules"
 target-path: ../build
 log-path: ../logs
+packages-install-path: /dbt
 clean-targets:
   - build
   - dbt_modules
