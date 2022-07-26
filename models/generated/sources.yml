@@ -1,6 +1,6 @@
 version: 2
 sources:
-- name: wirago_uat
+- name: wirago_test
   quoting:
     database: true
     schema: false

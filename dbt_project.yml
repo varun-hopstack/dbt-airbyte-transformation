@@ -2,17 +2,20 @@ name: airbyte_utils
 version: "1.0"
 config-version: 2
 profile: normalize
+model-paths:
+  - models
 docs-paths:
   - docs
 analysis-paths:
   - analysis
 test-paths:
   - tests
+seed-paths:
+  - data
 macro-paths:
   - macros
 target-path: ../build
 log-path: ../logs
-packages-install-path: /dbt
 clean-targets:
   - build
   - dbt_modules
@@ -39,47 +42,43 @@ models:
       airbyte_views:
         +tags: airbyte_internal_views
         +materialized: view
-dispatch:
-  - macro_namespace: dbt_utils
-    search_order:
-      - airbyte_utils
-      - dbt_utils
 vars:
   json_column: _airbyte_data
   models_to_source:
-    orders_ab1: wirago_uat._airbyte_raw_orders
-    orders_ab2: wirago_uat._airbyte_raw_orders
-    orders_ab3: wirago_uat._airbyte_raw_orders
-    orders: wirago_uat._airbyte_raw_orders
-    orders_rawdata_ab1: wirago_uat._airbyte_raw_orders
-    orders_rawdata_ab2: wirago_uat._airbyte_raw_orders
-    orders_rawdata_ab3: wirago_uat._airbyte_raw_orders
-    orders_rawdata: wirago_uat._airbyte_raw_orders
-    orders_attributes_ab1: wirago_uat._airbyte_raw_orders
-    orders_attributes_ab2: wirago_uat._airbyte_raw_orders
-    orders_attributes_ab3: wirago_uat._airbyte_raw_orders
-    orders_attributes: wirago_uat._airbyte_raw_orders
-    orders_billingaddress_ab1: wirago_uat._airbyte_raw_orders
-    orders_billingaddress_ab2: wirago_uat._airbyte_raw_orders
-    orders_billingaddress_ab3: wirago_uat._airbyte_raw_orders
-    orders_billingaddress: wirago_uat._airbyte_raw_orders
-    orders_shippingaddress_ab1: wirago_uat._airbyte_raw_orders
-    orders_shippingaddress_ab2: wirago_uat._airbyte_raw_orders
-    orders_shippingaddress_ab3: wirago_uat._airbyte_raw_orders
-    orders_shippingaddress: wirago_uat._airbyte_raw_orders
-    orders_stageprogressions_ab1: wirago_uat._airbyte_raw_orders
-    orders_stageprogressions_ab2: wirago_uat._airbyte_raw_orders
-    orders_stageprogressions_ab3: wirago_uat._airbyte_raw_orders
-    orders_stageprogressions: wirago_uat._airbyte_raw_orders
-    orders_labelgeneratedattrs_ab1: wirago_uat._airbyte_raw_orders
-    orders_labelgeneratedattrs_ab2: wirago_uat._airbyte_raw_orders
-    orders_labelgeneratedattrs_ab3: wirago_uat._airbyte_raw_orders
-    orders_labelgeneratedattrs: wirago_uat._airbyte_raw_orders
-    orders_rawdata_billing_address_ab1: wirago_uat._airbyte_raw_orders
-    orders_rawdata_billing_address_ab2: wirago_uat._airbyte_raw_orders
-    orders_rawdata_billing_address_ab3: wirago_uat._airbyte_raw_orders
-    orders_rawdata_billing_address: wirago_uat._airbyte_raw_orders
-    orders_rawdata_shipping_address_ab1: wirago_uat._airbyte_raw_orders
-    orders_rawdata_shipping_address_ab2: wirago_uat._airbyte_raw_orders
-    orders_rawdata_shipping_address_ab3: wirago_uat._airbyte_raw_orders
-    orders_rawdata_shipping_address: wirago_uat._airbyte_raw_orders
+    orders_ab1: wirago_test._airbyte_raw_orders
+    orders_ab2: wirago_test._airbyte_raw_orders
+    orders_stg: wirago_test._airbyte_raw_orders
+    orders_scd: wirago_test._airbyte_raw_orders
+    orders: wirago_test._airbyte_raw_orders
+    orders_rawdata_ab1: wirago_test._airbyte_raw_orders
+    orders_rawdata_ab2: wirago_test._airbyte_raw_orders
+    orders_rawdata_ab3: wirago_test._airbyte_raw_orders
+    orders_rawdata: wirago_test._airbyte_raw_orders
+    orders_attributes_ab1: wirago_test._airbyte_raw_orders
+    orders_attributes_ab2: wirago_test._airbyte_raw_orders
+    orders_attributes_ab3: wirago_test._airbyte_raw_orders
+    orders_attributes: wirago_test._airbyte_raw_orders
+    orders_billingaddress_ab1: wirago_test._airbyte_raw_orders
+    orders_billingaddress_ab2: wirago_test._airbyte_raw_orders
+    orders_billingaddress_ab3: wirago_test._airbyte_raw_orders
+    orders_billingaddress: wirago_test._airbyte_raw_orders
+    orders_shippingaddress_ab1: wirago_test._airbyte_raw_orders
+    orders_shippingaddress_ab2: wirago_test._airbyte_raw_orders
+    orders_shippingaddress_ab3: wirago_test._airbyte_raw_orders
+    orders_shippingaddress: wirago_test._airbyte_raw_orders
+    orders_stageprogressions_ab1: wirago_test._airbyte_raw_orders
+    orders_stageprogressions_ab2: wirago_test._airbyte_raw_orders
+    orders_stageprogressions_ab3: wirago_test._airbyte_raw_orders
+    orders_stageprogressions: wirago_test._airbyte_raw_orders
+    orders_labelgeneratedattrs_ab1: wirago_test._airbyte_raw_orders
+    orders_labelgeneratedattrs_ab2: wirago_test._airbyte_raw_orders
+    orders_labelgeneratedattrs_ab3: wirago_test._airbyte_raw_orders
+    orders_labelgeneratedattrs: wirago_test._airbyte_raw_orders
+    orders_rawdata_billing_address_ab1: wirago_test._airbyte_raw_orders
+    orders_rawdata_billing_address_ab2: wirago_test._airbyte_raw_orders
+    orders_rawdata_billing_address_ab3: wirago_test._airbyte_raw_orders
+    orders_rawdata_billing_address: wirago_test._airbyte_raw_orders
+    orders_rawdata_shipping_address_ab1: wirago_test._airbyte_raw_orders
+    orders_rawdata_shipping_address_ab2: wirago_test._airbyte_raw_orders
+    orders_rawdata_shipping_address_ab3: wirago_test._airbyte_raw_orders
+    orders_rawdata_shipping_address: wirago_test._airbyte_raw_orders
