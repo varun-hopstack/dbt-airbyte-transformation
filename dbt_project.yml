@@ -11,6 +11,7 @@ test-paths:
 macro-paths:
   - macros
 target-path: ../build
+packages-install-path: /dbt
 log-path: ../logs
 clean-targets:
   - build
