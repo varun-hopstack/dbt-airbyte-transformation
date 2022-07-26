@@ -1,0 +1,1 @@
+{"host":"hopstack-analytics.cq6feogwdllm.us-east-1.redshift.amazonaws.com","port":5439,"schema":"public","database":"dev","password":"yqnEoHJaaXERJZxb7aUy","username":"hopstack-admin","s3_bucket_region":"","purge_staging_data":true}

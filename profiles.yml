@@ -1,0 +1,17 @@
+config:
+  partial_parse: true
+  printer_width: 120
+  send_anonymous_usage_stats: false
+  use_colors: true
+normalize:
+  outputs:
+    prod:
+      dbname: dev
+      host: hopstack-analytics.cq6feogwdllm.us-east-1.redshift.amazonaws.com
+      pass: yqnEoHJaaXERJZxb7aUy
+      port: 5439
+      schema: public
+      threads: 4
+      type: redshift
+      user: hopstack-admin
+  target: prod
