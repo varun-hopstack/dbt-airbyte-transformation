@@ -1,1 +1,168 @@
-{"streams":[{"stream":{"name":"orders","json_schema":{"type":"object","properties":{"_id":{"type":"string"},"tote":{"type":"string"},"carrier":{"type":"string"},"orderId":{"type":"number"},"rawData":{"type":"object","properties":{"invoice":{"type":"string"},"order_id":{"type":"number"},"awb_image":{"type":"string"},"interface":{"type":"string"},"order_date":{"type":"string"},"total_item":{"type":"number"},"order_email":{"type":"string"},"order_status":{"type":"number"},"payment_date":{"type":"string"},"product_type":{"type":"string"},"shipping_type":{"type":"string"},"order_products":{"type":"array"},"payment_status":{"type":"number"},"billing_address":{"type":"object","properties":{"city":{"type":"string"},"phone":{"type":"string"},"state":{"type":"string"},"country":{"type":"string"},"order_id":{"type":"number"},"last_name":{"type":"string"},"post_code":{"type":"string"},"first_name":{"type":"string"},"address_line1":{"type":"string"},"address_line2":{"type":"string"},"billing_address_id":{"type":"number"}}},"shipping_address":{"type":"object","properties":{"city":{"type":"string"},"email":{"type":"string"},"phone":{"type":"string"},"state":{"type":"string"},"country":{"type":"string"},"order_id":{"type":"number"},"post_code":{"type":"string"},"address_line1":{"type":"string"},"address_line2":{"type":"string"},"receiver_name":{"type":"string"},"shipping_address_id":{"type":"number"}}},"total_weight_aibyte_transform":{"type":"string"}}},"awbCheck":{"type":"boolean"},"reposted":{"type":"boolean"},"resolved":{"type":"boolean"},"batchKind":{"type":"string"},"orderDate":{"type":"string"},"reference":{"type":"string"},"subStatus":{"type":"string"},"attributes":{"type":"object","properties":{"email":{"type":"string"},"interface":{"type":"string"},"weight_aibyte_transform":{"type":"string"}}},"exceptions":{"type":"array"},"manualPush":{"type":"boolean"},"orderValue":{"type":"number"},"resolvedAt":{"type":"number"},"shipmentId":{"type":"string"},"toBePosted":{"type":"boolean"},"orderStatus":{"type":"string"},"willResolve":{"type":"boolean"},"autoResolved":{"type":"boolean"},"messageAttrs":{"type":"array"},"updatedStock":{"type":"boolean"},"completedDate":{"type":"number"},"shippingLabel":{"type":"string"},"billingAddress":{"type":"object","properties":{"zip":{"type":"string"},"city":{"type":"string"},"name":{"type":"string"},"line1":{"type":"string"},"line2":{"type":"string"},"phone":{"type":"string"},"state":{"type":"string"},"country":{"type":"string"}}},"dropoffStation":{"type":"string"},"orderLineItems":{"type":"array"},"postedTracking":{"type":"boolean"},"trackingNumber":{"type":"string"},"shippingAddress":{"type":"object","properties":{"zip":{"type":"string"},"city":{"type":"string"},"name":{"type":"string"},"email":{"type":"string"},"line1":{"type":"string"},"line2":{"type":"string"},"phone":{"type":"string"},"state":{"type":"string"},"country":{"type":"string"}}},"postedCompletion":{"type":"boolean"},"postedTrackingAt":{"type":"number"},"reprocessedLabel":{"type":"boolean"},"manuallyUpdatedAt":{"type":"number"},"stageProgressions":{"type":"object","properties":{"CANCELLED":{"type":"number"},"COMPLETED":{"type":"number"},"EXCEPTION":{"type":"number"},"UNPROCESSED":{"type":"number"},"PACKING_STARTED":{"type":"number"},"PICKING_STARTED":{"type":"number"},"SORTING_STARTED":{"type":"number"},"PARTIAL_COMPLETED":{"type":"number"},"PICKING_COMPLETED":{"type":"number"},"SORTING_COMPLETED":{"type":"number"},"AWAITING_CONSIGNMENT":{"type":"number"}}},"checkForExceptions":{"type":"boolean"},"postedCompletionAt":{"type":"number"},"labelGeneratedAttrs":{"type":"object","properties":{"machine":{"type":"string"},"timestamp":{"type":"number"}}},"willBecomeException":{"type":"boolean"},"createdAt_aibyte_transform":{"type":"string"},"updatedAt_aibyte_transform":{"type":"string"}}},"supported_sync_modes":["full_refresh","incremental"],"default_cursor_field":[],"source_defined_primary_key":[],"namespace":"wirago-test"},"sync_mode":"incremental","cursor_field":["updatedAt_aibyte_transform"],"destination_sync_mode":"append_dedup","primary_key":[["_id"]]}]}
+{
+  "streams": [
+    {
+      "stream": {
+        "name": "orders",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "_id": { "type": "string" },
+            "tote": { "type": "string" },
+            "carrier": { "type": "string" },
+            "orderId": { "type": "number" },
+            "rawData": {
+              "type": "object",
+              "properties": {
+                "invoice": { "type": "string" },
+                "order_id": { "type": "number" },
+                "awb_image": { "type": "string" },
+                "interface": { "type": "string" },
+                "order_date": { "type": "string" },
+                "total_item": { "type": "number" },
+                "order_email": { "type": "string" },
+                "order_status": { "type": "number" },
+                "payment_date": { "type": "string" },
+                "product_type": { "type": "string" },
+                "shipping_type": { "type": "string" },
+                "order_products": { "type": "array" },
+                "payment_status": { "type": "number" },
+                "billing_address": {
+                  "type": "object",
+                  "properties": {
+                    "city": { "type": "string" },
+                    "phone": { "type": "string" },
+                    "state": { "type": "string" },
+                    "country": { "type": "string" },
+                    "order_id": { "type": "number" },
+                    "last_name": { "type": "string" },
+                    "post_code": { "type": "string" },
+                    "first_name": { "type": "string" },
+                    "address_line1": { "type": "string" },
+                    "address_line2": { "type": "string" },
+                    "billing_address_id": { "type": "number" }
+                  }
+                },
+                "shipping_address": {
+                  "type": "object",
+                  "properties": {
+                    "city": { "type": "string" },
+                    "email": { "type": "string" },
+                    "phone": { "type": "string" },
+                    "state": { "type": "string" },
+                    "country": { "type": "string" },
+                    "order_id": { "type": "number" },
+                    "post_code": { "type": "string" },
+                    "address_line1": { "type": "string" },
+                    "address_line2": { "type": "string" },
+                    "receiver_name": { "type": "string" },
+                    "shipping_address_id": { "type": "number" }
+                  }
+                },
+                "total_weight_aibyte_transform": { "type": "string" }
+              }
+            },
+            "awbCheck": { "type": "boolean" },
+            "reposted": { "type": "boolean" },
+            "resolved": { "type": "boolean" },
+            "batchKind": { "type": "string" },
+            "orderDate": { "type": "string" },
+            "reference": { "type": "string" },
+            "subStatus": { "type": "string" },
+            "attributes": {
+              "type": "object",
+              "properties": {
+                "email": { "type": "string" },
+                "interface": { "type": "string" },
+                "weight_aibyte_transform": { "type": "string" }
+              }
+            },
+            "exceptions": { "type": "array" },
+            "manualPush": { "type": "boolean" },
+            "orderValue": { "type": "number" },
+            "resolvedAt": { "type": "number" },
+            "shipmentId": { "type": "string" },
+            "toBePosted": { "type": "boolean" },
+            "orderStatus": { "type": "string" },
+            "willResolve": { "type": "boolean" },
+            "autoResolved": { "type": "boolean" },
+            "messageAttrs": { "type": "array" },
+            "updatedStock": { "type": "boolean" },
+            "completedDate": { "type": "number" },
+            "shippingLabel": { "type": "string" },
+            "billingAddress": {
+              "type": "object",
+              "properties": {
+                "zip": { "type": "string" },
+                "city": { "type": "string" },
+                "name": { "type": "string" },
+                "line1": { "type": "string" },
+                "line2": { "type": "string" },
+                "phone": { "type": "string" },
+                "state": { "type": "string" },
+                "country": { "type": "string" }
+              }
+            },
+            "dropoffStation": { "type": "string" },
+            "orderLineItems": { "type": "array" },
+            "postedTracking": { "type": "boolean" },
+            "trackingNumber": { "type": "string" },
+            "shippingAddress": {
+              "type": "object",
+              "properties": {
+                "zip": { "type": "string" },
+                "city": { "type": "string" },
+                "name": { "type": "string" },
+                "email": { "type": "string" },
+                "line1": { "type": "string" },
+                "line2": { "type": "string" },
+                "phone": { "type": "string" },
+                "state": { "type": "string" },
+                "country": { "type": "string" }
+              }
+            },
+            "postedCompletion": { "type": "boolean" },
+            "postedTrackingAt": { "type": "number" },
+            "reprocessedLabel": { "type": "boolean" },
+            "manuallyUpdatedAt": { "type": "number" },
+            "stageProgressions": {
+              "type": "object",
+              "properties": {
+                "CANCELLED": { "type": "number" },
+                "COMPLETED": { "type": "number" },
+                "EXCEPTION": { "type": "number" },
+                "UNPROCESSED": { "type": "number" },
+                "PACKING_STARTED": { "type": "number" },
+                "PICKING_STARTED": { "type": "number" },
+                "SORTING_STARTED": { "type": "number" },
+                "PARTIAL_COMPLETED": { "type": "number" },
+                "PICKING_COMPLETED": { "type": "number" },
+                "SORTING_COMPLETED": { "type": "number" },
+                "AWAITING_CONSIGNMENT": { "type": "number" }
+              }
+            },
+            "checkForExceptions": { "type": "boolean" },
+            "postedCompletionAt": { "type": "number" },
+            "labelGeneratedAttrs": {
+              "type": "object",
+              "properties": {
+                "machine": { "type": "string" },
+                "timestamp": { "type": "number" }
+              }
+            },
+            "willBecomeException": { "type": "boolean" },
+            "createdAt": { "type": "number" },
+            "updatedAt": { "type": "number" }
+          }
+        },
+        "supported_sync_modes": ["full_refresh", "incremental"],
+        "default_cursor_field": [],
+        "source_defined_primary_key": [],
+        "namespace": "wirago-test"
+      },
+      "sync_mode": "incremental",
+      "cursor_field": ["updatedAt"],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [["_id"]]
+    }
+  ]
+}

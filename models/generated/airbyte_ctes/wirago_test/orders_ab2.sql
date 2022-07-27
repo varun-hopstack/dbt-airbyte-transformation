@@ -48,8 +48,8 @@ select
     cast(postedcompletionat as {{ dbt_utils.type_float() }}) as postedcompletionat,
     cast(labelgeneratedattrs as {{ type_json() }}) as labelgeneratedattrs,
     {{ cast_to_boolean('willbecomeexception') }} as willbecomeexception,
-    cast(createdat_aibyte_transform as {{ dbt_utils.type_bigint() }}) as createdat_aibyte_transform,
-    cast(updatedat_aibyte_transform as {{ dbt_utils.type_bigint() }}) as updatedat_aibyte_transform,
+    cast(createdat as {{ dbt_utils.type_float() }}) as createdat,
+    cast(updatedat as {{ dbt_utils.type_float() }}) as updatedat,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at

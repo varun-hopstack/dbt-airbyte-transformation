@@ -99,21 +99,21 @@ scd_data as (
       postedcompletionat,
       labelgeneratedattrs,
       willbecomeexception,
-      createdat_aibyte_transform,
-      updatedat_aibyte_transform,
-      updatedat_aibyte_transform as _airbyte_start_at,
-      lag(updatedat_aibyte_transform) over (
+      createdat,
+      updatedat,
+      updatedat as _airbyte_start_at,
+      lag(updatedat) over (
         partition by _id
         order by
-            updatedat_aibyte_transform is null asc,
-            updatedat_aibyte_transform desc,
+            updatedat is null asc,
+            updatedat desc,
             _airbyte_emitted_at desc
       ) as _airbyte_end_at,
       case when row_number() over (
         partition by _id
         order by
-            updatedat_aibyte_transform is null asc,
-            updatedat_aibyte_transform desc,
+            updatedat is null asc,
+            updatedat desc,
             _airbyte_emitted_at desc
       ) = 1 then 1 else 0 end as _airbyte_active_row,
       _airbyte_ab_id,
@@ -184,8 +184,8 @@ select
     postedcompletionat,
     labelgeneratedattrs,
     willbecomeexception,
-    createdat_aibyte_transform,
-    updatedat_aibyte_transform,
+    createdat,
+    updatedat,
     _airbyte_start_at,
     _airbyte_end_at,
     _airbyte_active_row,

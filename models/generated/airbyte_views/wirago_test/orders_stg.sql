@@ -49,8 +49,8 @@ select
         'postedcompletionat',
         object_to_string('labelgeneratedattrs'),
         boolean_to_string('willbecomeexception'),
-        'createdat_aibyte_transform',
-        'updatedat_aibyte_transform',
+        'createdat',
+        'updatedat',
     ]) }} as _airbyte_orders_hashid,
     tmp.*
 from {{ ref('orders_ab2') }} tmp

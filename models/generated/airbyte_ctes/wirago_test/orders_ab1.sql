@@ -48,8 +48,8 @@ select
     {{ json_extract_scalar('_airbyte_data', ['postedCompletionAt'], ['postedCompletionAt']) }} as postedcompletionat,
     {{ json_extract('table_alias', '_airbyte_data', ['labelGeneratedAttrs'], ['labelGeneratedAttrs']) }} as labelgeneratedattrs,
     {{ json_extract_scalar('_airbyte_data', ['willBecomeException'], ['willBecomeException']) }} as willbecomeexception,
-    {{ json_extract_scalar('_airbyte_data', ['createdAt_aibyte_transform'], ['createdAt_aibyte_transform']) }} as createdat_aibyte_transform,
-    {{ json_extract_scalar('_airbyte_data', ['updatedAt_aibyte_transform'], ['updatedAt_aibyte_transform']) }} as updatedat_aibyte_transform,
+    {{ json_extract_scalar('_airbyte_data', ['createdAt'], ['createdAt']) }} as createdat,
+    {{ json_extract_scalar('_airbyte_data', ['updatedAt'], ['updatedAt']) }} as updatedat,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
